@@ -2,26 +2,21 @@
 version: '3'
 
 services:
-  laravel:
-    build: 
-      context: ./laravel
-      dockerfile: Dockerfile.prod
-    image: vakaria/laravel:prod
-    container_name: laravel
+  db:
+    image: mysql:5.7
+    #mysql precisa desse comando
+    command: --innodb-use-native-aio=0
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      #tudo gravado na var/lib/mysql fica saldo no volume externo
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
     networks:
-      - laranet
-    
-  nginx:
-    build: 
-      context: ./nginx
-      dockerfile: Dockerfile.prod
-    image: vakaria/nginx:prod
-    container_name: nginx
-    networks:
-      - laranet
-    ports:
-      - 8080:80
-
+      - node-network
 networks:
-  laranet:
+  node-network:
     driver: bridge
