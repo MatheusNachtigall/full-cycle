@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-EXPOSE 3000
+RUN ["npm", "install", "express"]
+RUN ["npm", "install", "mysql", "--save"]
 
-CMD ["node", "index.js"]
+EXPOSE 3000
