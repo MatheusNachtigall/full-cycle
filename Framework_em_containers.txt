@@ -1,0 +1,21 @@
+Exemplo aula
+    imagem com laravel
+
+Escolher imagem base
+    docker pull php:7.4-cli
+
+Primeiro baixar o container e ver todos os passos necessários e depois fazer isso no dockerfile
+    apt-get update
+    cd /var/www
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    php composer-setup.php
+    php -r "unlink('composer-setup.php');"
+    apt-get install libzip-dev -y
+    docker-php-ext-install zip
+    php composer.phar create-project --prefer-dist laravel/laravel laravel
+
+Precisa deixar o processo rodando pra nao sair ao finalizar
+    Queremos deixar o comando artisan segurando o container (ENTRYPOINT)
+        php artisan serve
+    
+    Deixar o host e port como argumentos (CMD)
