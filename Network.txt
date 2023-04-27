@@ -16,3 +16,28 @@ Tipos de Network
     - maclan
     - none
         container sem rede...roda isolado
+
+
+"Trabalhando com bridge"
+
+    Criando uma rede
+        docker network create --driver bridge minharede
+        docker network ls
+            Ve a rede criada
+        
+        cria 2 containers dentro da rede
+            docker run -dit --name ubuntu1 --network minharede bash
+            docker run -dit --name ubuntu2 --network minharede bash
+        
+        entra num container e pinga o outro
+            docker exec -it ubuntu1 bash
+            ping ubuntu2
+
+        conectar um container existente numa network
+            docker run -dit --name ubuntu3 --network minharede bash
+            docker network connect minharede ubuntu3
+
+
+"Trabalhando com host"
+    docker run --rm -d --name nginx --network host nginx
+
