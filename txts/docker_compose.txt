@@ -1,7 +1,0 @@
-docker compose automatiza comandos no docker
-    "makefile" de dockerfiles
-
-comando
-    docker-compose up -d --build
-        -d detach terminal
-        --build pra rebuild
