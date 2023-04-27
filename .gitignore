@@ -1,6 +1,6 @@
-node/node_modules
-mysql/**
-!mysql/mysql
-!mysql/nodedb
-!mysql/performance_schema
-!mysql/sys
+docker/node/node_modules
+docker/mysql/**
+!docker/mysql/mysql
+!docker/mysql/nodedb
+!docker/mysql/performance_schema
+!docker/mysql/sys
