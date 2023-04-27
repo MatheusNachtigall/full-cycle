@@ -41,3 +41,18 @@ Tipos de Network
 "Trabalhando com host"
     docker run --rm -d --name nginx --network host nginx
 
+
+Container acessar a maquina
+    Docker precisa acessar recurso do host
+
+    criar um webserver na maquina 
+        (criei um server node no app.js)
+    criar/entrar num container
+        docker run --rm -it --name ubuntu ubuntu bash
+    atualizar container e baixar o curl para trabalhar com network
+        apt-get update
+        apt-get install curl
+    Acessar maquina
+        curl http://host.docker.internal:3000
+    
+
