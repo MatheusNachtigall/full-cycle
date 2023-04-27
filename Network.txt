@@ -1,0 +1,18 @@
+Idealmente cada aplicação esta num container exclusivo
+
+Ex:
+    - container php
+    - container sql
+
+Para os containers se conectarem...precisam estar na mesma rede
+
+Tipos de Network
+    - Bridge
+    - host
+        mescla network do docker com o host do docker ex:
+            rodar um container sql e uma aplicação php na minha maquina
+    - overlay
+        varios containers em computadores diferentes precisam se comunicar
+    - maclan
+    - none
+        container sem rede...roda isolado
