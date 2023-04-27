@@ -1,0 +1,6 @@
+node/node_modules
+mysql/**
+!mysql/mysql
+!mysql/nodedb
+!mysql/performance_schema
+!mysql/sys
