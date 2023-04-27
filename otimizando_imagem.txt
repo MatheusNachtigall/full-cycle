@@ -1,0 +1,27 @@
+Objetivo
+    Criar uma imagem laravel prod
+        - nginx como proxy reverso
+        - php no modo fast-cgi
+    Reduzir o tamanho da imagem com alpine linux (linux super leve)
+
+    multi stage building
+        Fazer o build em multiplas etapas: ex
+            inicial -> gera imagem
+            final -> otimiza imagem
+        gera o build da imagem original do laravel, e copia para a nova build
+
+
+    docker build -t vakaria/laravel:prod laravel -f Dockerfile.prod
+
+    nginx como proxy reverso
+        configurar o nginx.conf
+        configurar o dockerfile:prod do nginx
+    
+    build na imagem nginx e laravel
+
+    criar uma rede para o nginx e o laravel
+        docker network create laranet
+
+    rodar container nginx e laravel
+        docker run -d --network laranet --name laravel vakaria/laravel:prod
+        docker run -d --network laranet --name nginx -p 8080:80 vakaria/nginx:prod
