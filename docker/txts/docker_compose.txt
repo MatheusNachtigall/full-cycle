@@ -14,3 +14,26 @@ Acessando mysql
     use nodedb;
     create table people(id int not null auto_increment, name varchar(255), primary key(id));
     desc people;
+
+
+Problemas docker:
+    Dependencias:
+        Ex:
+            só pode iniciar o node quando o sql ja esta pronto
+            caso nao esteja e ocorra alguma requisicao pode matar o container
+    Necessario esperar ficar pronto
+    
+    dockerize 
+        instalado DENTRO DO CONTAINER 
+        botar no dockerfile:
+            RUN apt-get install -y wget
+
+            ENV DOCKERIZE_VERSION v0.6.1
+            RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+                && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+                && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+         mudar o entrypoint do node
+            Executar dockerize antes do entrypoint
+                no dockercompose app:
+                    entrypoint: 
+                        dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
