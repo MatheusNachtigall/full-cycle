@@ -4,8 +4,6 @@ version: '3'
 services:
   db:
     image: mysql:5.7
-    #mysql precisa desse comando
-    command: --innodb-use-native-aio=0
     container_name: desafio-db
     restart: always
     tty: true
@@ -23,16 +21,15 @@ services:
       context: ./node
     volumes:
       - ./node:/usr/src/app
+      - /usr/src/app/node_modules
     container_name: desafio-node
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s node index.js
     networks:
       - desafio2
-    ports:
-      - 3000:3000
-    
+
   nginx:
     build: 
       context: ./nginx
-    image: nginx
     container_name: desafio-nginx
     networks:
       - desafio2
