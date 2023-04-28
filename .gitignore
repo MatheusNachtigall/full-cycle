@@ -4,3 +4,9 @@ docker/mysql/**
 !docker/mysql/nodedb
 !docker/mysql/performance_schema
 !docker/mysql/sys
+docker/desafio_2/node/node_modules
+docker/desafio_2/mysql/**
+!docker/desafio_2/mysql/mysql
+!docker/desafio_2/mysql/nodedb
+!docker/desafio_2/mysql/performance_schema
+!docker/desafio_2/mysql/sys

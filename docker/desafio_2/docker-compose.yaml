@@ -1,0 +1,45 @@
+#versao do compose
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    #mysql precisa desse comando
+    command: --innodb-use-native-aio=0
+    container_name: desafio-db
+    restart: always
+    tty: true
+    volumes:
+      #tudo gravado na var/lib/mysql fica saldo no volume externo
+      - ./mysql:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - desafio2
+
+  node:
+    build: 
+      context: ./node
+    volumes:
+      - ./node:/usr/src/app
+    container_name: desafio-node
+    networks:
+      - desafio2
+    ports:
+      - 3000:3000
+    
+  # nginx:
+  #   build: 
+  #     context: ./nginx
+  #     dockerfile: Dockerfile.prod
+  #   image: vakaria/nginx:prod
+  #   container_name: nginx
+  #   networks:
+  #     - desafio2
+  #   ports:
+  #     - 8080:80
+
+networks:
+  desafio2:
+    driver: bridge
