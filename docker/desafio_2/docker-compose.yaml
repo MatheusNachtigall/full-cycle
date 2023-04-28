@@ -29,16 +29,15 @@ services:
     ports:
       - 3000:3000
     
-  # nginx:
-  #   build: 
-  #     context: ./nginx
-  #     dockerfile: Dockerfile.prod
-  #   image: vakaria/nginx:prod
-  #   container_name: nginx
-  #   networks:
-  #     - desafio2
-  #   ports:
-  #     - 8080:80
+  nginx:
+    build: 
+      context: ./nginx
+    image: nginx
+    container_name: desafio-nginx
+    networks:
+      - desafio2
+    ports:
+      - 8080:80
 
 networks:
   desafio2:
