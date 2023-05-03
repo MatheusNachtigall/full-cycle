@@ -1,0 +1,15 @@
+#versao do compose
+version: '3'
+
+services:
+  pong-app:
+    build:
+      context: ./
+    container_name: pong-app
+    entrypoint: node index.js
+    volumes:
+      - ./:/usr/src/app
+    tty: true
+    ports:
+      - "3000:3000"
+

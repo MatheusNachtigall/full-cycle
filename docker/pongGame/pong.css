@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#game-board {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: #333;
+    margin: 0 auto;
+}
+.paddle {
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    background-color: #fff;
+}
+#player1 {
+    left: 10px;
+    top: 160px;
+}
+#player2 {
+    right: 10px;
+    top: 160px;
+}
+.ball {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* Scores */
+#score {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #fff;
+}
