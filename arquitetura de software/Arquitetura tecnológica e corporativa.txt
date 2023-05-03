@@ -1,0 +1,13 @@
+Tipo arquitetura
+    - Solução
+        Tranformar requisitos de negocios em soluções de software
+        analisa impactos comerciais em relação a uma escolha de tecnologia
+        analisa impacto dos custos para o negocio
+    - Tecnologica
+        Especialidade em tecnologias especificas de mercado
+            - ex: Arquiteto elastic, arquiteto java
+    - Corporativa
+        Impacta a organizacao como um todo
+        avaliacao de custos
+    - Software
+        
