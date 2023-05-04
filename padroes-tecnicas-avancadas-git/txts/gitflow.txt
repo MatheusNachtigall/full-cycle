@@ -1,0 +1,22 @@
+Branch master
+    Normalmente produção
+        Nunca desenv. direto na master
+Branch Release
+    Copia identica a master
+Branch develop
+    Valida tudo antes de enviar pra master
+
+Feature branches
+    Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. 
+    But, instead of branching off of main, feature branches use develop as their parent branch. 
+    When a feature is complete, it gets merged back into develop. 
+    Features should never interact directly with main.
+
+
+
+Resolução de bug em produção (onde geralmente se descobre o bug)
+    Cria-se branch "hotfix" baseado na master
+    Corrige o bug
+    MErge esse branch tanto no master como em develop
+
+
