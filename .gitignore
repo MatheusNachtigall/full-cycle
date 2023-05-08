@@ -11,6 +11,11 @@ docker/desafio_2/mysql/**
 !docker/desafio_2/mysql/performance_schema
 !docker/desafio_2/mysql/sys
 
+CI_CD/node/node_modules
+CI_CD/node/coverage
+CI_CD/node/.scannerwork
+CI_CD/go/.scannerwork
+
 
 !comunicacao-entre-sistemas/api-tools/data/cache/.gitkeep
 comunicacao-entre-sistemas/api-tools/.vagrant/

@@ -1,0 +1,16 @@
+Continuous Integration
+    Integrar modificações de forma contínuoa e automatizada, evitando erros humanos
+    Principais processos:
+        - Testes
+        - Linter (Se segre padrões)
+        - Qualidade de codigo
+        - Verificação de segurança
+        - facilitar processos de deploy 
+            Ex: CI faz todas as verificaçoes e gera automaticamente uma imagem docker para deploy
+        - BumpVersioning
+            Analiza os commits enviados pelo formato SemVer (Semantical Versioning) e  conventional commits e automaticamente ajusta qual sera a proxima versão do software
+        - Geracao de tags e releases
+
+Status Check
+    Garantia que o PR nao sera mergeado antes de passar pelo CI (ou code review)
+
