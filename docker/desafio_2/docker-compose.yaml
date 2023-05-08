@@ -5,7 +5,7 @@ services:
   db:
     image: mysql:5.7
     container_name: desafio-db
-    restart: always
+    #restart: always
     tty: true
     volumes:
       #tudo gravado na var/lib/mysql fica saldo no volume externo

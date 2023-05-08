@@ -7,7 +7,7 @@ services:
     #mysql precisa desse comando
     command: --innodb-use-native-aio=0
     container_name: db
-    restart: always
+    #restart: always
     tty: true
     volumes:
       #tudo gravado na var/lib/mysql fica saldo no volume externo
