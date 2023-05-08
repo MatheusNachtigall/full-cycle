@@ -1,0 +1,10 @@
+mode: set
+teste/math.go:5.13,7.2 1 0
+teste/math.go:9.29,11.2 1 1
+teste/math.go:13.28,15.2 1 0
+teste/math.go:17.29,19.2 1 0
+teste/math.go:21.30,23.2 1 0
+teste/math.go:25.30,27.2 1 0
+teste/math.go:29.31,31.2 1 0
+teste/math.go:33.32,35.2 1 0
+teste/math.go:37.33,39.2 1 0
